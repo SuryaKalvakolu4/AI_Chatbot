@@ -1,4 +1,4 @@
-const API_KEY = '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'
+const apiKey = process.env.OPENAI_API_KEY;
 const submitButton = document.querySelector('#submit')
 const outPutElement = document.querySelector('#output')
 const inputElement = document.querySelector('input')
@@ -14,7 +14,7 @@ async function getMessage(){
     const options = {
         method: 'POST',
         headers: {
-            'Authorization': `Bearer ${API_KEY}`,
+            'Authorization': `Bearer ${apiKey}`,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
